@@ -1,10 +1,11 @@
-fn a_or_b<'a, 'b>(a: &'a u32, b: &'b u32) -> &'a u32 {
+fn a_or_b<'a, 'b>(_a: &'a u32, b: &'b u32) -> &'b u32 {
     b
 }
 
-fn proxy<'a>(a: &'a u32) -> &'a u32 {
+fn proxy<'a,'b>(a: &'a u32) -> &'b u32 {
     let b = 25;
-    a_or_b(a, &b)
+    let b = a_or_b(a, &b);
+    b
 }
 
 fn main() {

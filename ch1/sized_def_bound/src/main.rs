@@ -1,4 +1,4 @@
-fn foo<T>(_x: &T) {}
+fn foo<T:?Sized>(_x: &T) {}
 
 fn main() {
     let arr = [1, 2, 3];

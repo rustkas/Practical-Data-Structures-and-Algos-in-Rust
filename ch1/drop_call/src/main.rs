@@ -8,5 +8,7 @@ impl Drop for A {
 
 fn main() {
     let mut a = A(4);
-    Drop::drop(&mut a);
+    // Drop::drop(&mut a);
+    #[allow(dropping_references)]
+    drop(&mut a);
 }

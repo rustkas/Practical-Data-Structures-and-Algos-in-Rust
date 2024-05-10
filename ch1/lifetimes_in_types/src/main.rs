@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 struct BorrowingInt<'a> {
     r: &'a u32,
 }
